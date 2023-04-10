@@ -1,0 +1,24 @@
+#footer-cont{
+    width: 100%;
+    height: 8vh;
+    background-color: grey;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    #des{
+        display: flex;
+        align-items: center;
+        color:white;
+        margin-left:5px;
+    }
+    #pages {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        align-items: space-around;
+        a{
+            color:white
+        }
+    }
+
+}

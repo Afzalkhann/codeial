@@ -6,19 +6,24 @@ module.exports.profile=function(req,res){
 }
 //render the sign up page
 module.exports.signUp=function(req,res){
+    if(req.isAuthenticated()){
+        res.redirect('/user/profile')
+    }
     res.render('user_sign_up',{
         title:'Codeial | User Sign up'
     })
 }
 //render the sign in page
 module.exports.signIn=function(req,res){
+    if(req.isAuthenticated()){
+        res.redirect('/user/profile')
+    }
     res.render('user_sign_in',{
         title:'Codeial | User Sign in'
     })
 }
 //get the data from sign up
 module.exports.create=function(req,res){
-    console.log(req.body)
     if(req.body.password!=req.body.conPassword){
         return res.redirect('back')
     }
@@ -46,4 +51,14 @@ module.exports.create=function(req,res){
 
 module.exports.createSession=function(req,res){
     return res.redirect('/')
+}
+
+module.exports.destroySession=function(req,res){
+    req.logout(function(err){
+        if(err){
+            console.log("error")
+        }
+        return res.redirect('/')
+    });
+    
 }

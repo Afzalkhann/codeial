@@ -1,2 +1,38 @@
     
-    <h4>this is header </h4>
+    <header>
+        
+        
+            <div id="container">
+                
+                <div id="name">
+                    Codeial
+                </div>
+                <div id="links">
+                
+                    <%if(locals.user){%>
+                    <div><%=user.name%></div>
+                <div>
+                    &nbsp;
+                </div>
+                <div>
+                    <a href="/user/sign-out">Sign Out</a>
+                </div>
+            
+                <%}else{%>
+                    
+                    <div>
+                        <a href="/user/sign-in">Sign In</a>
+                    </div>
+                    <div> &nbsp;</div>
+                    <div>
+                        <a href="/user/sign-up">Sign Up</a>
+                    </div>
+                    
+                <%}%>
+                
+        
+        </div>
+    </div>
+
+ </header>
+   

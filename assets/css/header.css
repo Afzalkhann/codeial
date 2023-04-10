@@ -1,0 +1,28 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none; }
+
+#container {
+  width: 100vw;
+  height: 7vh;
+  background-color: mediumturquoise;
+  justify-content: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold; }
+  #container a {
+    color: black; }
+  #container #name {
+    font-size: 1em;
+    margin-left: 10px; }
+  #container #links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 10px; }
