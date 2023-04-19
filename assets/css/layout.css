@@ -1,5 +1,5 @@
 body {
   margin: 0;
-  padding: 0; }
-  body main {
-    height: 81.4vh; }
+  /* text-align: center; */ }
+  body #layout-main {
+    height: 100%; }

@@ -6,7 +6,7 @@ const expressLayouts=require('express-ejs-layouts')
 const db=require('./config/mongoose')
 const session=require('express-session')
 const passport=require('passport')
-const passportLocal=require('./config/passport-local-strat')
+const passportLocal=require('./config/passport-local-strategy')
 const MongoStore=require('connect-mongo')(session)
 const sassMiddleware=require('node-sass-middleware')
 app.use(sassMiddleware({

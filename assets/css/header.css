@@ -1,28 +1,20 @@
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0; }
-
-a {
-  text-decoration: none; }
-
-#container {
-  width: 100vw;
-  height: 7vh;
-  background-color: mediumturquoise;
-  justify-content: center;
+#layout-header nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: bold; }
-  #container a {
-    color: black; }
-  #container #name {
-    font-size: 1em;
-    margin-left: 10px; }
-  #container #links {
+  padding: 0 10px;
+  background: #2196f3;
+  color: white;
+  box-shadow: 1px 1px 1px 1px lightgrey; }
+  #layout-header nav .mini-logo p {
+    margin: 5px;
+    font-size: 1.4rem;
+    font-weight: bold; }
+  #layout-header nav .auth-links ul {
+    margin: 5% 5px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-right: 10px; }
+    list-style: none; }
+    #layout-header nav .auth-links ul li {
+      margin-right: 10px; }
+  #layout-header nav a {
+    color: white;
+    text-decoration: none; }

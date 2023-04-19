@@ -1,25 +1,10 @@
-<h1>Sign up Page</h1>
+<h1>Sign Up</h1>
 
-<form method="post" action="/user/create">
+<form action="/users/create" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+    <input type="submit" value="Sign Up">
 
-    <div class="password">
-        <label>Name</label>
-        <input type="text" name="name" id="pass" required>
-    </div>
-    <div class="email">
-        <label>User Name</label>
-        <input type="email" name="email" id="email" required>
-    </div>
-    <div class="password">
-        <label>Password</label>
-        <input type="password" name="password" id="pass" required>
-    </div>
-    <div class="password">
-        <label>Confirm Password</label>
-        <input type="password" name="conPassword" id="con-pass" required>
-    </div>
-    <div class="submit">
-        <input type="submit"    id="submit" required>
-    </div>
-    
 </form>

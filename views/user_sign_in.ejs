@@ -1,17 +1,8 @@
 <h1>Sign In</h1>
-<form method="post" action="/user/create-session">
 
-    <div class="email">
-        <label>User Name</label>
-        <input type="email" name="email" id="email" required>
-    </div>
-    <div class="password">
-        <label>Password</label>
-        <input type="password" name="password" id="pass" required>
-    </div>
-    
-    <div class="submit">
-        <input type="submit" value="Sign In" id="submit" required>
-    </div>
+<form action="/users/create-session" method="POST">
+    <input type="email" name="email" placeholder="Email"  required>
+    <input type="password" name="password" placeholder="Password"  required>
+    <input type="submit" value="Sign In">
 
 </form>

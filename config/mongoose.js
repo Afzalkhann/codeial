@@ -1,12 +1,15 @@
-const mongoose=require('mongoose')
-mongoose.connect('mongodb://localhost/codeial_devlopment');
-const db=mongoose.connection;
+const mongoose = require('mongoose');
 
-db.on('error',console.error.bind(console,"error connecting to mongo db"))
+mongoose.connect('mongodb://localhost/codeial_development');
+
+const db = mongoose.connection;
+
+db.on('error', console.error.bind(console, "Error connecting to MongoDB"));
 
 
-db.once('open',function(){
-    console.log("mongo db is connected")
-})
+db.once('open', function(){
+    console.log('Connected to Database :: MongoDB');
+});
 
-module.exports=db
+
+module.exports = db;
