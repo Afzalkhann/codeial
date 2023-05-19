@@ -7,10 +7,13 @@ const db=require('./config/mongoose')
 const session=require('express-session')
 const passport=require('passport')
 const passportLocal=require('./config/passport-local-strategy')
+const passportJWT=require('./config/passport-JWT-strategy')
 const MongoStore=require('connect-mongo')(session)
 const sassMiddleware=require('node-sass-middleware')
 const flash=require('connect-flash')
 const custMware=require('./config/middleware')
+const passportGoogle=require('./config/passport-google-oauth2-strategy')
+const Noty = require('noty');
 app.use(sassMiddleware({
     src:'./assets/sass',
     dest:'./assets/css',
@@ -19,6 +22,7 @@ app.use(sassMiddleware({
     prefix:'/css'
 }))
 app.use(express.urlencoded())
+app.use('/uploads',express.static(__dirname+'/uploads'))
 app.use(cookieParser())
 app.use(express.static('./assets'))
 
