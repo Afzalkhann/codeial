@@ -9,12 +9,12 @@ const development={
         port:587,
         secure:false,
         auth:{
-            user:'afzalkhann76@gmail.com',
-            pass:'pzeruftpggisspej'
+            user:'abc.com',
+            pass:'pass'
         }
     },
-    google_clientID:'156014284450-c2sd3kt9kvdp5tf74lh3mqnbq6b1pn7r.apps.googleusercontent.com',
-    google_clientSecret:'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',
+    google_clientID:'a156014284450-c2sd3kt9kvdp5tf74lh3mqnbq6b1pn7r.apps.googleusercontent.com',
+    google_clientSecret:'aGOCSPX-IdTXuGofAaWSvirq0emJvJEc8unX',
     google_callbackURL:'http://localhost:8000/users/auth/google/callback',
     jwt_screate:'codeal',
 }
