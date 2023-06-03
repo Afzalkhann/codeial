@@ -1,4 +1,5 @@
 const express=require('express')
+const env=require('./config/environment')
 const cookieParser=require('cookie-parser')
 const app=express()
 const port=8000
@@ -13,18 +14,22 @@ const sassMiddleware=require('node-sass-middleware')
 const flash=require('connect-flash')
 const custMware=require('./config/middleware')
 const passportGoogle=require('./config/passport-google-oauth2-strategy')
+const chatServer=require('http').Server(app)
+const chatSockets=require('./config/chat_sockets').chatSockets(chatServer)
+const path=require('path')
+chatServer.listen(5000)
+console.log('chatserver listning to port 5000')
 const Noty = require('noty');
 app.use(sassMiddleware({
-    src:'./assets/sass',
-    dest:'./assets/css',
+    src:path.join(__dirname,env.asset_path,'scss'),
+    dest:path.join(__dirname,env.asset_path,'css'),
     debug:true,
     outputStyle:"extended",
     prefix:'/css'
 }))
-app.use(express.urlencoded())
-app.use('/uploads',express.static(__dirname+'/uploads'))
+app.use(express.urlencoded()).use('/uploads',express.static(__dirname+'/uploads'))
 app.use(cookieParser())
-app.use(express.static('./assets'))
+app.use(express.static(env.asset_path))
 
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
@@ -37,7 +42,7 @@ app.set('view engine','ejs');
 app.set('views','./views');
 app.use(session({
     name:'codeial',
-    secret:'somthing',
+    secret:env.session_cookie_key,
     saveUninitialized:false,
     resave:false,
     cookie:{

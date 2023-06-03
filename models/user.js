@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema({
     timestamps: true
 });
 let storage=multer.diskStorage({
-    destination:function(req,file,cb){
+    destination:function(req,res,cb){
         cb(null,path.join(__dirname,'..',AVATAR_PATH))
     },
     filename:function(req,file,cb){

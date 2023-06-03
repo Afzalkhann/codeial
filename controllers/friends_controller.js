@@ -26,7 +26,6 @@ module.exports.create=async function(req,res){
                 fromUser:req.query.fromUser,
                 toUser:req.query.toUser
             })
-            console.log(req.query.toUser)
             User.friends.push(req.query.toUser)
             User.save()
             User1.friends.push(req.query.fromUser)
